@@ -1,4 +1,4 @@
-# Medical Appintment for Pacients with Zustand
+# Medical Appointment for Pacients with Zustand
 
 This project is a easy simulation to attend patients into a enviroment about to wait for a medical appointment.
 
@@ -19,6 +19,7 @@ npm create vite@latest
 ```bash
 npm i -D tailwindcss postcss autoprefixer
 npx tailwindcss init -p
+npm i react-hook-form ---> https://react-hook-form.com/
 ```
 
 ## Package Tailwind CSS
