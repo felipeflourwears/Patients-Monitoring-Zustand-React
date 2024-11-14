@@ -20,7 +20,18 @@ npm create vite@latest
 npm i -D tailwindcss postcss autoprefixer
 npx tailwindcss init -p
 npm i react-hook-form ---> https://react-hook-form.com/
+npm i uuid --> ID unicos to use temporal
+npm i --save-dev @types/uuid --> Types
 ```
+
+## Zustand 
+State global 
+
+```bash
+npm i zustand --> https://www.npmjs.com/package/zustand
+```
+
+
 
 ## Package Tailwind CSS
 
