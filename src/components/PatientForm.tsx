@@ -8,10 +8,11 @@ const PatientForm = () => {
     //const addPatient = usePatientStore(state => state.addPatient)
     const { addPatient } = usePatientStore()
 
-    const { register, handleSubmit, formState: {errors} } = useForm<DraftPatient>()
+    const { register, handleSubmit, formState: {errors}, reset } = useForm<DraftPatient>()
 
     const registerPatient = ( data : DraftPatient) => {
         addPatient(data)
+        reset()
     }
 
     return (
@@ -101,7 +102,7 @@ const PatientForm = () => {
     
                 <div className="mb-5">
                     <label htmlFor="date" className="text-sm uppercase font-bold">
-                        Admission Date
+                        High Date
                     </label>
                     <input  
                         id="date"
