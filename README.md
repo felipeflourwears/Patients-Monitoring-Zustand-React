@@ -2,6 +2,23 @@
 
 This project is a easy simulation to attend patients into a enviroment about to wait for a medical appointment.
 
+# Site Deploy by Netlify
+
+```bash
+https://joyful-torrone-acadba.netlify.app/
+```
+
+[![Visit Site](https://img.shields.io/badge/Visit-Website-blue?style=for-the-badge)](https://joyful-torrone-acadba.netlify.app/)
+
+## Screenshots
+
+### Main Screen
+<img src="public/main.png" alt="main">
+
+
+### Add patient
+<img src="public/demo.png" alt="main">
+
 ## Project Setup
 
 The project was created using Vite with the following configuration:
