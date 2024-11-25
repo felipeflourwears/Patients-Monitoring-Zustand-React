@@ -1,7 +1,7 @@
 import { create } from 'zustand'
 import { DraftPatient, Patient } from '../types'
 import { v4 as uuidv4 } from 'uuid'
-import { devtools, persists } from 'zustand/middleware'
+import { devtools, persist } from 'zustand/middleware'
 
 type PatientState = {
     patients: Patient[]
@@ -20,38 +20,41 @@ const createPatient = (patient : DraftPatient) : Patient =>{
 }
 
 export const usePatientStore = create<PatientState>()(
-    devtools((set)=>({
-        patients: [],
-        activeId: '',
-        addPatient: (data) =>{
+    devtools(
+        persist((set)=>({
+            patients: [],
+            activeId: '',
+            addPatient: (data) =>{
 
-            const newPatient = createPatient(data)
+                const newPatient = createPatient(data)
 
-            console.log("addPatient: ", data)
-            set((state)=>({
-                patients : [...state.patients, newPatient]
-            }))
-        },
-        deletePatient: (id) =>{
-            console.log(id)
+                console.log("addPatient: ", data)
+                set((state)=>({
+                    patients : [...state.patients, newPatient]
+                }))
+            },
+            deletePatient: (id) =>{
+                console.log(id)
 
-            set((state)=>({
-                patients: state.patients.filter(patient => patient.id !== id)
-            }))
-        },
-        getPatientById: (id) =>{
-            console.log(id)
-            set(()=>({
-            activeId: id 
-            }))
-        },
-        updatePatient: (data) =>{
-            set((state)=>({
-                patients: state.patients.map(patient => patient.id === state.activeId ? {id: state.activeId, ...
-                    data} : patient),
-                activeId: ''
-            }))
+                set((state)=>({
+                    patients: state.patients.filter(patient => patient.id !== id)
+                }))
+            },
+            getPatientById: (id) =>{
+                console.log(id)
+                set(()=>({
+                activeId: id 
+                }))
+            },
+            updatePatient: (data) =>{
+                set((state)=>({
+                    patients: state.patients.map(patient => patient.id === state.activeId ? {id: state.activeId, ...
+                        data} : patient),
+                    activeId: ''
+                }))
 
-        }
-    }))
-)
+            }
+    }),{
+        name: 'patient-storage'
+    })
+))
