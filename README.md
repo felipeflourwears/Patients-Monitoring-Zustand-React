@@ -31,6 +31,16 @@ State global
 npm i zustand --> https://www.npmjs.com/package/zustand
 ```
 
+## Alerts
+```bash
+npm i react-toastify --->https://fkhadra.github.io/react-toastify/introduction/
+```
+
+#### Add to project
+
+```bash
+import { ToastContainer } from 'react-toastify' App.tsx
+```
 
 
 ## Package Tailwind CSS

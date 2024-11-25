@@ -1,7 +1,7 @@
 import { create } from 'zustand'
 import { DraftPatient, Patient } from '../types'
 import { v4 as uuidv4 } from 'uuid'
-import { devtools } from 'zustand/middleware'
+import { devtools, persists } from 'zustand/middleware'
 
 type PatientState = {
     patients: Patient[]
